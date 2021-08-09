@@ -1,4 +1,4 @@
-# getx_auth
+# cadevo
 
 A new Flutter project.
 
