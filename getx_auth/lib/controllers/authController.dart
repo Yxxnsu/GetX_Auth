@@ -21,8 +21,7 @@ class AuthController extends GetxController{
   @override
   void onReady(){
     super.onReady();
-    firebaseUser = Rx<User>(auth.currentUser!);
-
+    firebaseUser = Rx<User?>(auth.currentUser);
     //Resign 될 때에 firebaseUser Update 해준다!
     firebaseUser.bindStream(auth.userChanges()); 
 
@@ -41,7 +40,6 @@ class AuthController extends GetxController{
 
   void signIn()async{
     try{
-      snowLoading();
       await auth.signInWithEmailAndPassword(
         email: email.text.trim(), 
         password: password.text.trim()).then((result) {
@@ -57,7 +55,6 @@ class AuthController extends GetxController{
   }
    void signUp() async {
       try{
-        snowLoading();
         await auth.createUserWithEmailAndPassword(
         email: email.text.trim(), password: password.text.trim()).then((result){
           String _userId = result.user!.uid;
