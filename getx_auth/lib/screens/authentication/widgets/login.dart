@@ -1,8 +1,6 @@
 import 'package:cadevo/constants/controllers.dart';
-import 'package:cadevo/screens/home/home.dart';
 import 'package:cadevo/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class LoginWidget extends StatelessWidget {
   @override
@@ -74,7 +72,8 @@ borderRadius: BorderRadius.circular(20)
             padding: const EdgeInsets.all(25),
             child: CustomButton(
                 bgColor: Colors.blue.shade700,
-                text: "Login", onTap: (){
+                text: "Login", 
+                onTap: (){
                   authController.signIn();
             }),
           )

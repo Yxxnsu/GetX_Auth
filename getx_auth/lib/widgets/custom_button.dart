@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=> onTap,
+      onTap: (){onTap();},
       child: PhysicalModel(
         color: Colors.grey.withOpacity(.4),
         elevation: 5,
