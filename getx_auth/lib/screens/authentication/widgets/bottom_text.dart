@@ -17,7 +17,7 @@ class BottomTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=> onTap,
+      onTap: (){onTap!();},
       child: RichText(text: TextSpan(children: [
         TextSpan(text: text1, style: TextStyle(color: Colors.black)),
         TextSpan(text: " $text2", style: TextStyle(color: Colors.blue))
